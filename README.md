@@ -44,7 +44,7 @@ Rust Link Crawler 🔗 is a production-ready web crawler that:
 ✅ **Configurable**: Adjust crawl depth (0-5 levels) for different needs  
 
 ---
-## How the Crawler Works
+## How the Crawler Works?
 
 ### Algorithm: Breadth-First Search (BFS)
 
