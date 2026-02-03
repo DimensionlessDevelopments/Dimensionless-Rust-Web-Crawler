@@ -1,4 +1,4 @@
-# Dimensionless Rust Link Crawler 🔗
+# Dimensionless Rust Link Web Crawler 🔗
 
 Dimensionless Developments presents Rust Link Web Crawler 🔗. A blazingly fast, high-performance web crawler and broken link checker built with Rust. This project demonstrates modern async Rust development with a full-stack web application featuring server-side rendering, concurrent HTTP requests, and comprehensive link validation.
 
