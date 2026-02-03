@@ -1,0 +1,209 @@
+<!-- Dimensionless Developments Rust Link Web Crawler -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Rust Link Crawler | Dimensionless Developments</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%); color: #e5e7eb; min-height: 100vh; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+        nav { border-bottom: 1px solid #374151; background: rgba(249, 115, 22, 0.8); backdrop-filter: blur(10px); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 4rem; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #111827; }
+        .nav-links { display: flex; gap: 2rem; }
+        .nav-links a { color: #d1d5db; text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover { color: #111827; }
+        .hero { text-align: center; padding: 5rem 0; }
+        .hero h1 { font-size: 4rem; font-weight: bold; margin-bottom: 1.5rem; }
+        .hero p { font-size: 1.25rem; color: #9ca3af; max-width: 42rem; margin: 0 auto 3rem; }
+        .card { background: rgba(249, 115, 22, 0.8); backdrop-filter: blur(10px); border: 1px solid #374151; border-radius: 0.5rem; padding: 3rem; margin: 5rem 0; transition: all 0.3s; }
+        .card:hover { background: rgba(249, 115, 22, 0.1); border-color: #111827; }
+        .card h2 { font-size: 2.25rem; font-weight: bold; margin-bottom: 1.5rem; text-align: center; }
+        .card p { font-size: 1.125rem; color: #d1d5db; margin-bottom: 1rem; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 5rem 0; }
+        .feature { background: rgba(249, 115, 22, 0.8); backdrop-filter: blur(10px); border: 1px solid #374151; border-radius: 0.5rem; padding: 2rem; transition: all 0.3s; }
+        .feature:hover { background: rgba(249, 115, 22, 0.1); border-color: #111827; transform: translateY(-4px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .feature h3 { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
+        .crawler-form { background: rgba(249, 115, 22, 0.8); backdrop-filter: blur(10px); border: 1px solid #374151; border-radius: 0.5rem; padding: 2rem; max-width: 600px; margin: 2rem auto; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; color: #111827; }
+        .form-group input { width: 100%; padding: 0.75rem; border: 1px solid #374151; border-radius: 0.5rem; background: #111827; color: #e5e7eb; font-size: 1rem; }
+        .form-group input:focus { outline: none; border-color: #111827; box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.5); }
+        .btn { background: #111827; color: white; font-weight: bold; padding: 1rem 2rem; border: none; border-radius: 0.5rem; font-size: 1.125rem; cursor: pointer; transition: all 0.3s; width: 100%; }
+        .btn:hover { background: #ea580c; transform: scale(1.02); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .results { margin-top: 2rem; padding: 1.5rem; background: #111827; border: 1px solid #374151; border-radius: 0.5rem; max-height: 500px; overflow-y: auto; }
+        .results pre { color: #10b981; font-family: 'Courier New', monospace; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; word-break: break-word; }
+        .cta { text-align: center; padding: 5rem 0; }
+        .cta h2 { font-size: 2.25rem; font-weight: bold; margin-bottom: 2rem; }
+        footer { border-top: 1px solid #374151; background: rgba(249, 115, 22, 0.8); margin-top: 5rem; padding: 3rem 0; text-align: center; color: #9ca3af; }
+        footer a { color: #d1d5db; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: #111827; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">Rust Link Crawler 🔗</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#features">Features</a>
+                    <a href="#crawler">Crawl Now!</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Rust Link Crawler 🔗</h1>
+            <p>Dimensionless Developments presents Rust Link Web Crawler. A blazingly fast web crawler and broken link checker built with Rust. Experience efficient, reliable link validation powered by cutting-edge technology.</p>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="card">
+                <h2>About Rust Link Crawler</h2>
+                <p>Rust Link Crawler is a high-performance web crawler built with Rust, Axum, and reqwest. We combine the speed and safety of Rust with modern web frameworks to deliver seamless link checking and validation.</p>
+                <p>Powered by reqwest and scraper, our crawler can traverse websites, discover links, and check their status codes. Whether you need to validate internal links, find broken pages, or map site structure, Rust Link Crawler is here to help.</p>
+                <p>Experience the future of web crawling with a tool that's as fast and reliable as Rust itself.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2 style="font-size: 2.25rem; font-weight: bold; margin-bottom: 3rem; text-align: center;">Why Choose Rust Link Crawler?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Built with Rust for exceptional performance. Crawl thousands of links in seconds with concurrent HTTP requests.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Safe & Reliable</h3>
+                    <p>Rust's memory safety guarantees ensure your crawler never crashes. Handle edge cases with confidence.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Deep Link Discovery</h3>
+                    <p>Automatically discovers and validates all links on a page. Configure crawl depth to map entire site hierarchies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="crawler">
+        <div class="container">
+            <div class="cta">
+                <h2>Ready to Crawl? 🔎</h2>
+                <p style="font-size: 1.25rem; color: #9ca3af; margin-bottom: 2rem;">Start checking your website for broken links today</p>
+            </div>
+            
+            <div class="crawler-form">
+                <div class="form-group">
+                    <label for="url">Website URL</label>
+                    <input id="url" type="text" placeholder="https://example.com"/>
+                </div>
+                <div class="form-group">
+                    <label for="depth">Crawl Depth (0-5)</label>
+                    <input id="depth" type="number" min="0" max="5" value="1"/>
+                </div>
+                <button class="btn" type="button" id="start">Start Crawling 🔎</button>
+                
+                <div id="output" class="results" style="display:none;">
+                    <pre id="results-pre"></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-weight: 600; color: #111827;">© 2026 Rust Link Crawler. Built with Rust, Axum, and ❤️</p>
+            <a href="https://www.dimensionlessdevelopments.com" target="_blank">Made by Dimensionless Developments</a>
+        </div>
+    </footer>
+
+    <script type="module">
+        const start = document.getElementById('start');
+        const output = document.getElementById('output');
+        const resultsPre = document.getElementById('results-pre');
+        
+        start.addEventListener('click', async () => {
+            const url = document.getElementById('url').value.trim();
+            const depth = parseInt(document.getElementById('depth').value) || 1;
+            
+            console.log('Starting crawl:', { url, depth });
+            
+            if (!url) {
+                alert('Please enter a valid URL');
+                return;
+            }
+            
+            start.textContent = 'Crawling...';
+            start.disabled = true;
+            output.style.display = 'block';
+            resultsPre.textContent = 'Fetching links from ' + url + '...';
+            
+            try {
+                console.log('Sending fetch request to /api/crawl');
+                const res = await fetch('/api/crawl', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, depth })
+                });
+                
+                console.log('Response status:', res.status, res.statusText);
+                const data = await res.json();
+                console.log('Parsed JSON:', data);
+                
+                if (data.links && data.links.length > 0) {
+                    let outputText = '=== Crawl Results ===\n\n';
+                    outputText += 'Total links found: ' + data.links.length + '\n\n';
+                    
+                    const okLinks = data.links.filter(l => l.ok);
+                    const brokenLinks = data.links.filter(l => !l.ok);
+                    
+                    console.log('Link statistics:', { total: data.links.length, ok: okLinks.length, broken: brokenLinks.length });
+                    
+                    outputText += '✓ Working links: ' + okLinks.length + '\n';
+                    outputText += '✗ Broken links: ' + brokenLinks.length + '\n\n';
+                    
+                    if (brokenLinks.length > 0) {
+                        outputText += '--- Broken Links ---\n';
+                        brokenLinks.forEach(link => {
+                            outputText += '✗ ' + link.url + ' (Status: ' + (link.status || 'N/A') + ')\n';
+                        });
+                        outputText += '\n';
+                    }
+                    
+                    outputText += '--- All Links ---\n';
+                    data.links.forEach(link => {
+                        const status = link.ok ? '✓' : '✗';
+                        outputText += status + ' ' + link.url + ' (Status: ' + (link.status || 'N/A') + ')\n';
+                    });
+                    
+                    resultsPre.textContent = outputText;
+                } else {
+                    resultsPre.textContent = 'No links found or unable to crawl the provided URL. Response: ' + JSON.stringify(data);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                resultsPre.textContent = 'Error: ' + error.message + '\n\nCheck browser console for details.';
+            } finally {
+                start.textContent = 'Start Crawling';
+                start.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
